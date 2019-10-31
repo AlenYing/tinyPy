@@ -1,6 +1,7 @@
 #include "implementation.hh"
 #include <iostream>
 #include <sstream>
+#include <cstdlib>
 
 mode current_mode;
 
