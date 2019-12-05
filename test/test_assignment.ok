@@ -8,8 +8,8 @@ c := false
 d := true
 a := a + b
 b := b - 1
-c := a > b or c
-d := not d
+c := a > b || c
+d := ~ d
 print(a)
 print(b)
 print(c)

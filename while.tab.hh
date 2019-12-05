@@ -300,7 +300,7 @@ namespace yy {
         BEG = 259,
         END = 260,
         BOO = 261,
-        NAT = 262,
+        INT = 262,
         REA = 263,
         WRI = 264,
         IF = 265,
@@ -460,7 +460,7 @@ namespace yy {
 
     static inline
     symbol_type
-    make_NAT (const location_type& l);
+    make_INT (const location_type& l);
 
     static inline
     symbol_type
@@ -798,7 +798,7 @@ namespace yy {
 
 
 // //                    "%code provides" blocks.
-#line 10 "while.y" // lalr1.cc:377
+#line 12 "while.y" // lalr1.cc:377
 
 int yylex(yy::parser::semantic_type* yylval, yy::parser::location_type* yylloc);
 

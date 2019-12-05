@@ -3,6 +3,8 @@
 %define api.value.type variant
 
 %code top {
+using namespace std;
+#include <iostream>
 #include "implementation.hh"
 #include <list>
 }
@@ -15,7 +17,7 @@ int yylex(yy::parser::semantic_type* yylval, yy::parser::location_type* yylloc);
 %token BEG
 %token END
 %token BOO
-%token NAT
+%token INT
 %token REA
 %token WRI
 %token IF
@@ -50,6 +52,7 @@ int yylex(yy::parser::semantic_type* yylval, yy::parser::location_type* yylloc);
 start:
     declarations commands
     {
+        cout << "miniPy>\n";
         type_check_commands($2);
         execute_commands($2);
         delete_commands($2);
@@ -68,7 +71,7 @@ declaration:
         symbol(@1.begin.line, $2, boolean).declare();
     }
 |
-    NAT ID
+    INT ID
     {
         symbol(@1.begin.line, $2, natural).declare();
     }
