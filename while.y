@@ -18,6 +18,7 @@ int yylex(yy::parser::semantic_type* yylval, yy::parser::location_type* yylloc);
 %token END
 %token BOO
 %token INT
+%token STR
 %token REA
 %token WRI
 %token IF
@@ -74,6 +75,11 @@ declaration:
     INT ID
     {
         symbol(@1.begin.line, $2, natural).declare();
+    }
+|
+    STR ID
+    {
+        symbol(@1.begin.line, $2, py_string).declare();
     }
 ;
 

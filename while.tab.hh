@@ -301,35 +301,36 @@ namespace yy {
         END = 260,
         BOO = 261,
         INT = 262,
-        REA = 263,
-        WRI = 264,
-        IF = 265,
-        THE = 266,
-        ELS = 267,
-        EIF = 268,
-        WHI = 269,
-        DO = 270,
-        DON = 271,
-        TRU = 272,
-        FAL = 273,
-        ASN = 274,
-        OP = 275,
-        CL = 276,
-        ID = 277,
-        NUM = 278,
-        OR = 279,
-        AND = 280,
-        EQ = 281,
-        LS = 282,
-        GR = 283,
-        LSE = 284,
-        GRE = 285,
-        ADD = 286,
-        SUB = 287,
-        MUL = 288,
-        DIV = 289,
-        MOD = 290,
-        NOT = 291
+        STR = 263,
+        REA = 264,
+        WRI = 265,
+        IF = 266,
+        THE = 267,
+        ELS = 268,
+        EIF = 269,
+        WHI = 270,
+        DO = 271,
+        DON = 272,
+        TRU = 273,
+        FAL = 274,
+        ASN = 275,
+        OP = 276,
+        CL = 277,
+        ID = 278,
+        NUM = 279,
+        OR = 280,
+        AND = 281,
+        EQ = 282,
+        LS = 283,
+        GR = 284,
+        LSE = 285,
+        GRE = 286,
+        ADD = 287,
+        SUB = 288,
+        MUL = 289,
+        DIV = 290,
+        MOD = 291,
+        NOT = 292
       };
     };
 
@@ -461,6 +462,10 @@ namespace yy {
     static inline
     symbol_type
     make_INT (const location_type& l);
+
+    static inline
+    symbol_type
+    make_STR (const location_type& l);
 
     static inline
     symbol_type
@@ -785,7 +790,7 @@ namespace yy {
       yyfinal_ = 3, ///< Termination state number.
       yyterror_ = 1,
       yyerrcode_ = 256,
-      yyntokens_ = 37  ///< Number of tokens.
+      yyntokens_ = 38  ///< Number of tokens.
     };
 
 
@@ -794,7 +799,7 @@ namespace yy {
 
 
 } // yy
-#line 798 "while.tab.hh" // lalr1.cc:377
+#line 803 "while.tab.hh" // lalr1.cc:377
 
 
 // //                    "%code provides" blocks.
@@ -802,7 +807,7 @@ namespace yy {
 
 int yylex(yy::parser::semantic_type* yylval, yy::parser::location_type* yylloc);
 
-#line 806 "while.tab.hh" // lalr1.cc:377
+#line 811 "while.tab.hh" // lalr1.cc:377
 
 
 #endif // !YY_YY_WHILE_TAB_HH_INCLUDED

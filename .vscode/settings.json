@@ -1,6 +1,8 @@
 {
     "files.associations": {
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "iostream": "cpp",
+        "string": "cpp"
     },
     "workbench.colorCustomizations": {
         "activityBar.background": "#88d7ea",

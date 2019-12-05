@@ -29,7 +29,7 @@ std::string symbol::get_code() {
 int symbol::get_size() {
     if(symbol_type == boolean) {
         return 1;
-    } else {
+    } else if(symbol_type == natural) {
         return 4;
     }
 }

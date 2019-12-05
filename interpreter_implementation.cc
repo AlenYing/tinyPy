@@ -12,6 +12,10 @@ unsigned boolean_expression::get_value() const {
     return (unsigned)value;
 }
 
+unsigned string_expression::get_value() const {
+    return value;
+}
+
 unsigned id_expression::get_value() const {
     if(value_table.count(name) == 0) {
         error(line, std::string("Variable has not been initialized: ") + name);
@@ -73,7 +77,7 @@ void read_instruction::execute() {
         } else {
             value_table[id] = 0;
         }
-    }
+    } 
 }
 
 void write_instruction::execute() {
@@ -85,6 +89,8 @@ void write_instruction::execute() {
         } else {
             std::cout << "false" << std::endl;
         }
+    } else if(exp_type == py_string) {
+        std::cout << exp->get_value() << std::endl;
     }
 }
 

@@ -1,6 +1,7 @@
 #ifndef IMPLEMENTATION_HH
 #define IMPLEMENTATION_HH
 
+#include <iostream>
 #include <string>
 #include <list>
 #include <map>
@@ -9,7 +10,7 @@ enum mode {compiler, interpreter};
 
 extern mode current_mode;
 
-enum type {boolean, natural};
+enum type {boolean, natural, py_string};
 
 void error(int line, std::string text);
 
@@ -37,6 +38,16 @@ class boolean_expression : public expression {
     type get_type() const;
     std::string get_code() const;
     unsigned get_value() const;    
+  private:
+    bool value;
+};
+
+class string_expression : public expression {
+  public:
+    string_expression(std::string _string);
+    type get_type() const;
+    std::string get_code() const;
+    unsigned get_value() const;
   private:
     bool value;
 };

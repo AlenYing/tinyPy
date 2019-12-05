@@ -17,6 +17,7 @@ begin                       return parser::token::BEG;
 end                         return parser::token::END;
 bool                        return parser::token::BOO;
 int                         return parser::token::INT;
+string                      return parser::token::STR;
 read                        return parser::token::REA;
 print                       return parser::token::WRI;
 if                          return parser::token::IF;
