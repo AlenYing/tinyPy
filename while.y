@@ -48,15 +48,11 @@ int yylex(yy::parser::semantic_type* yylval, yy::parser::location_type* yylloc);
 %%
 
 start:
-    PRG ID declarations BEG commands END
+    declarations commands
     {
-        type_check_commands($5);
-        if(current_mode == compiler) {
-            generate_code($5);
-        } else {
-            execute_commands($5);
-        }
-        delete_commands($5);
+        type_check_commands($2);
+        execute_commands($2);
+        delete_commands($2);
     }
 ;
 
