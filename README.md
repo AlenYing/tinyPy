@@ -1,10 +1,9 @@
-# Flex & Bison example
-A compiler and interpreter of a toy language. Using *C++*, *Flex* and *Bison*.
+# MiniPy
+A interpreter of a toy language. Using *C++*, *Flex* and *Bison*.
 
-## The toy language
-The language is called the *While language*. Its different variants often serve educational purposes. It has two types (*boolean* and *natural*), expressions of these two types, assignment instruction, reading from standard input, writing to standard output, branching and looping.
-
-See the *test/\*.ok* files to learn the syntax and semantics of the language.
+## Features
+MiniPy supports three types of variables, including **int**, **bool**, **string**. You can assign them and print them through standard output.
+Branching and looping are also implemented.
 
 ## Building the project
 Make sure you have *g++*, *flex*, *bison* and *nasm* installed. The project was tested with the following versions: g++ 6.3.0, flex 2.6.1, bison 3.0.4, nasm 2.12.01. It might work with other versions as well.
