@@ -14,6 +14,10 @@ std::string boolean_expression::get_code() const {
     return ss.str();
 }
 
+std::string string_expression::get_code() const {
+    return "nop";
+}
+
 std::string next_label() {
     std::stringstream ss;
     ss << "label" << id++;

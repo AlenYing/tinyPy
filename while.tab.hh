@@ -273,6 +273,7 @@ namespace yy {
 
       // ID
       // NUM
+      // string
       char dummy4[sizeof(std::string)];
 };
 
@@ -318,19 +319,20 @@ namespace yy {
         CL = 277,
         ID = 278,
         NUM = 279,
-        OR = 280,
-        AND = 281,
-        EQ = 282,
-        LS = 283,
-        GR = 284,
-        LSE = 285,
-        GRE = 286,
-        ADD = 287,
-        SUB = 288,
-        MUL = 289,
-        DIV = 290,
-        MOD = 291,
-        NOT = 292
+        QUO = 280,
+        OR = 281,
+        AND = 282,
+        EQ = 283,
+        LS = 284,
+        GR = 285,
+        LSE = 286,
+        GRE = 287,
+        ADD = 288,
+        SUB = 289,
+        MUL = 290,
+        DIV = 291,
+        MOD = 292,
+        NOT = 293
       };
     };
 
@@ -530,6 +532,10 @@ namespace yy {
     static inline
     symbol_type
     make_NUM (const std::string& v, const location_type& l);
+
+    static inline
+    symbol_type
+    make_QUO (const location_type& l);
 
     static inline
     symbol_type
@@ -785,12 +791,12 @@ namespace yy {
     enum
     {
       yyeof_ = 0,
-      yylast_ = 177,     ///< Last index in yytable_.
-      yynnts_ = 7,  ///< Number of nonterminal symbols.
+      yylast_ = 182,     ///< Last index in yytable_.
+      yynnts_ = 8,  ///< Number of nonterminal symbols.
       yyfinal_ = 3, ///< Termination state number.
       yyterror_ = 1,
       yyerrcode_ = 256,
-      yyntokens_ = 38  ///< Number of tokens.
+      yyntokens_ = 39  ///< Number of tokens.
     };
 
 
@@ -799,7 +805,7 @@ namespace yy {
 
 
 } // yy
-#line 803 "while.tab.hh" // lalr1.cc:377
+#line 809 "while.tab.hh" // lalr1.cc:377
 
 
 // //                    "%code provides" blocks.
@@ -807,7 +813,7 @@ namespace yy {
 
 int yylex(yy::parser::semantic_type* yylval, yy::parser::location_type* yylloc);
 
-#line 811 "while.tab.hh" // lalr1.cc:377
+#line 817 "while.tab.hh" // lalr1.cc:377
 
 
 #endif // !YY_YY_WHILE_TAB_HH_INCLUDED

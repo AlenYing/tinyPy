@@ -35,6 +35,7 @@ int yylex(yy::parser::semantic_type* yylval, yy::parser::location_type* yylloc);
 %token CL
 %token <std::string> ID
 %token <std::string> NUM
+%token QUO
 
 %left OR
 %left AND
@@ -47,6 +48,7 @@ int yylex(yy::parser::semantic_type* yylval, yy::parser::location_type* yylloc);
 %type <expression*> expression
 %type <instruction*> command
 %type <std::list<instruction*>* > commands
+%type <std::string> string
 
 %%
 
@@ -149,6 +151,11 @@ expression:
         $$ = new id_expression(@1.begin.line, $1);
     }
 |
+    string
+    {
+        $$ = new string_expression($1);
+    }
+|
     expression ADD expression
     {
         $$ = new binop_expression(@2.begin.line, "+", $1, $3);
@@ -215,6 +222,12 @@ expression:
     }
 |
     OP expression CL
+    {
+        $$ = $2;
+    }
+;
+string:
+    QUO  ID   QUO
     {
         $$ = $2;
     }

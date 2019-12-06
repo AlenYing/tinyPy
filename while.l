@@ -45,6 +45,7 @@ false                       return parser::token::FAL;
 "~"                         return parser::token::NOT;
 "("                         return parser::token::OP;
 ")"                         return parser::token::CL;
+"\""                        return parser::token::QUO;
 [a-zA-Z_][a-zA-Z0-9_]*      return parser::token::ID;
 [0-9]+                      return parser::token::NUM;
 [ \t\n]+                    // Whitespaces skipped.

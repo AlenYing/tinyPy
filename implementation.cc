@@ -18,6 +18,13 @@ number_expression::number_expression(std::string text) {
     ss >> value;
 }
 
+string_expression::string_expression(std::string _string) {
+    std::stringstream ss(_string);
+    ss >> value;
+    strExp = _string;
+    // ss >> strExp;
+}
+
 boolean_expression::boolean_expression(bool _value) {
     value = _value;
 }

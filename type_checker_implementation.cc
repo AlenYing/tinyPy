@@ -65,6 +65,10 @@ type not_expression::get_type() const {
     }
     return boolean;
 }
+ 
+type string_expression::get_type() const {
+    return py_string;
+}
 
 void assign_instruction::type_check() {
     if(symbol_table.count(left) == 0) {

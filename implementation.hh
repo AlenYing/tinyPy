@@ -20,6 +20,7 @@ class expression {
     virtual ~expression();
     virtual std::string get_code() const = 0;
     virtual unsigned get_value() const = 0;
+    virtual std::string get_string() const = 0;
 };
 
 class number_expression : public expression {
@@ -27,9 +28,11 @@ class number_expression : public expression {
     number_expression(std::string text);  
     type get_type() const;
     std::string get_code() const;
-    unsigned get_value() const;    
+    unsigned get_value() const;
+    std::string get_string() const;    
   private:
     unsigned value;
+    std::string strExp;
 };
 
 class boolean_expression : public expression {
@@ -37,9 +40,11 @@ class boolean_expression : public expression {
     boolean_expression(bool _value);  
     type get_type() const;
     std::string get_code() const;
-    unsigned get_value() const;    
+    unsigned get_value() const;   
+    std::string get_string() const;
   private:
     bool value;
+    std::string strExp;
 };
 
 class string_expression : public expression {
@@ -48,8 +53,10 @@ class string_expression : public expression {
     type get_type() const;
     std::string get_code() const;
     unsigned get_value() const;
+    std::string get_string() const;
   private:
-    bool value;
+    std::string value;
+    std::string strExp;
 };
 
 extern long id;
@@ -70,16 +77,19 @@ struct symbol {
 
 extern std::map<std::string, symbol> symbol_table;
 extern std::map<std::string, unsigned> value_table;
+extern std::map<std::string, std::string> string_table;
 
 class id_expression : public expression {
   public:
     id_expression(int line, std::string _name);  
     type get_type() const;
     std::string get_code() const;
-    unsigned get_value() const;    
+    unsigned get_value() const;
+    std::string get_string() const;    
   private:
     int line;
     std::string name;
+    std::string strExp;
 };
 
 class binop_expression : public expression {
@@ -89,6 +99,7 @@ class binop_expression : public expression {
     type get_type() const;
     std::string get_code() const;
     unsigned get_value() const;    
+    std::string get_string() const;    
   private:
     int line;
     std::string op;
@@ -103,6 +114,7 @@ class not_expression : public expression {
     type get_type() const;
     std::string get_code() const;
     unsigned get_value() const;    
+    std::string get_string() const;    
   private:
     int line;
     std::string op;
