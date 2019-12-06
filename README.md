@@ -9,7 +9,7 @@ Branching and looping are also implemented.
 
 ### Prequisites
 
-MiniPy use `g++` to compile cpp code and `flex` and `bison` to do lexeme and grammer analysis. You should have them installed on your machine. Linux distributions are prefered.
+MiniPy use `g++` to compile cpp code and `flex` and `bison` to do lexeme and grammer analysis. `make` is also needed for build reason. You should have them installed on your machine. Linux distributions are prefered.
 
 ## Make
 
