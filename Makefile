@@ -9,7 +9,7 @@ while.tab.cc while.tab.hh: while.y
 
 .PHONY: clean
 clean:
-	rm -f lex.yy.cc while.tab.cc while.tab.hh location.hh position.hh stack.hh while temp.asm temp.o temp temp.out
+	rm -f lex.yy.cc while.tab.cc while.tab.hh location.hh position.hh stack.hh miniPy temp.asm temp.o temp temp.out
 
 .PHONY: test
 test: test_interpreter test_compiler test_lexical_errors test_syntax_errors test_semantic_errors

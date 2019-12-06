@@ -8,7 +8,7 @@
 
 enum mode {compiler, interpreter};
 
-extern mode current_mode;
+// extern mode current_mode;
 
 enum type {boolean, natural, py_string};
 

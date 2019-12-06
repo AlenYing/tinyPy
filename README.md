@@ -23,7 +23,7 @@ make clean
 ```
 
 ## Using the interpreter
-The following command executes a miniPy program immediately:
+The following command interpretes a miniPy program immediately:
 ```
-./miniPy -i path/to/your/miniPy.program
+./miniPy path/to/your/miniPy.program
 ```

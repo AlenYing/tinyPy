@@ -3,7 +3,7 @@
 #include <sstream>
 #include <cstdlib>
 
-mode current_mode;
+// mode current_mode;
 
 void error(int line, std::string text) {
     std::cerr << "Line " << line << ": Error: " << text << std::endl;
