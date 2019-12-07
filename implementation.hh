@@ -10,7 +10,7 @@ enum mode {compiler, interpreter};
 
 // extern mode current_mode;
 
-enum type {boolean, natural, py_string};
+enum type {boolean, natural, py_string, py_list};
 
 void error(int line, std::string text);
 
@@ -33,6 +33,18 @@ class number_expression : public expression {
   private:
     unsigned value;
     std::string strExp;
+};
+
+class list_expression: public expression {
+  public:
+    list_expression(std::list<int>* list);
+    type get_type() const;
+    std::string get_code() const;
+    unsigned get_value() const;
+    std::string get_string() const;
+  private:
+    unsigned value;
+    std::list<int>* listValue;
 };
 
 class boolean_expression : public expression {

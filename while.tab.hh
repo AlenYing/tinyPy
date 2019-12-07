@@ -271,10 +271,13 @@ namespace yy {
       // commands
       char dummy3[sizeof(std::list<instruction*>* )];
 
+      // items
+      char dummy4[sizeof(std::list<int>*)];
+
       // ID
       // NUM
       // string
-      char dummy4[sizeof(std::string)];
+      char dummy5[sizeof(std::string)];
 };
 
     /// Symbol semantic values.
@@ -311,28 +314,32 @@ namespace yy {
         EIF = 269,
         WHI = 270,
         DO = 271,
-        DON = 272,
-        TRU = 273,
-        FAL = 274,
-        ASN = 275,
-        OP = 276,
-        CL = 277,
-        ID = 278,
-        NUM = 279,
-        QUO = 280,
-        OR = 281,
-        AND = 282,
-        EQ = 283,
-        LS = 284,
-        GR = 285,
-        LSE = 286,
-        GRE = 287,
-        ADD = 288,
-        SUB = 289,
-        MUL = 290,
-        DIV = 291,
-        MOD = 292,
-        NOT = 293
+        ARR = 272,
+        DON = 273,
+        TRU = 274,
+        FAL = 275,
+        ASN = 276,
+        OP = 277,
+        CL = 278,
+        LBRA = 279,
+        RBRA = 280,
+        COMMA = 281,
+        ID = 282,
+        NUM = 283,
+        QUO = 284,
+        OR = 285,
+        AND = 286,
+        EQ = 287,
+        LS = 288,
+        GR = 289,
+        LSE = 290,
+        GRE = 291,
+        ADD = 292,
+        SUB = 293,
+        MUL = 294,
+        DIV = 295,
+        MOD = 296,
+        NOT = 297
       };
     };
 
@@ -375,6 +382,8 @@ namespace yy {
   basic_symbol (typename Base::kind_type t, const instruction* v, const location_type& l);
 
   basic_symbol (typename Base::kind_type t, const std::list<instruction*>*  v, const location_type& l);
+
+  basic_symbol (typename Base::kind_type t, const std::list<int>* v, const location_type& l);
 
   basic_symbol (typename Base::kind_type t, const std::string v, const location_type& l);
 
@@ -503,6 +512,10 @@ namespace yy {
 
     static inline
     symbol_type
+    make_ARR (const location_type& l);
+
+    static inline
+    symbol_type
     make_DON (const location_type& l);
 
     static inline
@@ -524,6 +537,18 @@ namespace yy {
     static inline
     symbol_type
     make_CL (const location_type& l);
+
+    static inline
+    symbol_type
+    make_LBRA (const location_type& l);
+
+    static inline
+    symbol_type
+    make_RBRA (const location_type& l);
+
+    static inline
+    symbol_type
+    make_COMMA (const location_type& l);
 
     static inline
     symbol_type
@@ -692,7 +717,7 @@ namespace yy {
     static const char* const yytname_[];
 
   // YYRLINE[YYN] -- Source line where rule number YYN was defined.
-  static const unsigned char yyrline_[];
+  static const unsigned short int yyrline_[];
     /// Report on the debug stream that the rule \a r is going to be reduced.
     virtual void yy_reduce_print_ (int r);
     /// Print the state stack on the debug stream.
@@ -791,12 +816,12 @@ namespace yy {
     enum
     {
       yyeof_ = 0,
-      yylast_ = 182,     ///< Last index in yytable_.
-      yynnts_ = 8,  ///< Number of nonterminal symbols.
+      yylast_ = 207,     ///< Last index in yytable_.
+      yynnts_ = 9,  ///< Number of nonterminal symbols.
       yyfinal_ = 3, ///< Termination state number.
       yyterror_ = 1,
       yyerrcode_ = 256,
-      yyntokens_ = 39  ///< Number of tokens.
+      yyntokens_ = 43  ///< Number of tokens.
     };
 
 
@@ -805,7 +830,7 @@ namespace yy {
 
 
 } // yy
-#line 809 "while.tab.hh" // lalr1.cc:377
+#line 834 "while.tab.hh" // lalr1.cc:377
 
 
 // //                    "%code provides" blocks.
@@ -813,7 +838,7 @@ namespace yy {
 
 int yylex(yy::parser::semantic_type* yylval, yy::parser::location_type* yylloc);
 
-#line 817 "while.tab.hh" // lalr1.cc:377
+#line 842 "while.tab.hh" // lalr1.cc:377
 
 
 #endif // !YY_YY_WHILE_TAB_HH_INCLUDED

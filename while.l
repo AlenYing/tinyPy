@@ -18,6 +18,7 @@ end                         return parser::token::END;
 bool                        return parser::token::BOO;
 int                         return parser::token::INT;
 string                      return parser::token::STR;
+list                        return parser::token::ARR;
 read                        return parser::token::REA;
 print                       return parser::token::WRI;
 if                          return parser::token::IF;
@@ -46,6 +47,9 @@ false                       return parser::token::FAL;
 "("                         return parser::token::OP;
 ")"                         return parser::token::CL;
 "\""                        return parser::token::QUO;
+"["                         return parser::token::LBRA;
+"]"                         return parser::token::RBRA;
+","                         return parser::token::COMMA;
 [a-zA-Z_][a-zA-Z0-9_]*      return parser::token::ID;
 [0-9]+                      return parser::token::NUM;
 [ \t\n]+                    // Whitespaces skipped.

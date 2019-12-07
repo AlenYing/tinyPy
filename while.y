@@ -27,12 +27,16 @@ int yylex(yy::parser::semantic_type* yylval, yy::parser::location_type* yylloc);
 %token EIF
 %token WHI
 %token DO
+%token ARR
 %token DON
 %token TRU
 %token FAL
 %token ASN
 %token OP
 %token CL
+%token LBRA
+%token RBRA
+%token COMMA
 %token <std::string> ID
 %token <std::string> NUM
 %token QUO
@@ -49,6 +53,7 @@ int yylex(yy::parser::semantic_type* yylval, yy::parser::location_type* yylloc);
 %type <instruction*> command
 %type <std::list<instruction*>* > commands
 %type <std::string> string
+%type <std::list<int>*> items
 
 %%
 
@@ -82,6 +87,11 @@ declaration:
     STR ID
     {
         symbol(@1.begin.line, $2, py_string).declare();
+    }
+|   
+    ARR ID
+    {
+        symbol(@1.begin.line, $2, py_list).declare();
     }
 ;
 
@@ -154,6 +164,11 @@ expression:
     string
     {
         $$ = new string_expression($1);
+    }
+|
+    LBRA items RBRA 
+    {
+        $$ = new list_expression($2);
     }
 |
     expression ADD expression
@@ -230,6 +245,20 @@ string:
     QUO  ID   QUO
     {
         $$ = $2;
+    }
+;
+
+items:
+    NUM
+    {
+        $$ = new std::list<int>();
+        $$->push_back(std::stoi($1));
+    }
+|
+    items COMMA NUM
+    {
+        $1->push_back(std::stoi($3));
+        $$ = $1;
     }
 ;
 

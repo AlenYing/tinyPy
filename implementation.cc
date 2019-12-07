@@ -22,8 +22,12 @@ string_expression::string_expression(std::string _string) {
     std::stringstream ss(_string);
     ss >> value;
     strExp = _string;
-    // ss >> strExp;
 }
+
+list_expression::list_expression(std::list<int>* _list) {
+    listValue = _list;
+}
+
 
 boolean_expression::boolean_expression(bool _value) {
     value = _value;

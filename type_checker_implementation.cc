@@ -12,6 +12,10 @@ type boolean_expression::get_type() const {
     return boolean;
 }
 
+type list_expression::get_type() const {
+    return py_list;
+}
+
 void symbol::declare() {
     if(symbol_table.count(name) > 0) {
         error(line, std::string("Re-declared variable: ") + name);

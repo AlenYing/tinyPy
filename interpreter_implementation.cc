@@ -22,6 +22,14 @@ std::string boolean_expression::get_string() const {
     else if (value == 0) return "true";
 }
 
+unsigned list_expression::get_value() const {
+    return 0;
+}
+
+std::string list_expression::get_string() const {
+    return "list";
+}
+
 unsigned string_expression::get_value() const {
     return -1;
 }
@@ -153,6 +161,8 @@ void write_instruction::execute() {
         }
     } else if(exp_type == py_string) {
         std::cout << exp->get_string() << std::endl;
+    } else if(exp_type == py_list) {
+        std::cout << "list" << std::endl;
     }
 }
 
