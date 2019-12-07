@@ -30,6 +30,10 @@ type id_expression::get_type() const {
     return symbol_table[name].symbol_type;
 }
 
+type list_item_expression::get_type() const {
+    return natural;
+}
+
 type operand_type(std::string op) {
     if(op == "+" || op == "-" || op == "*" || op == "/" || op == "%" ||
        op == "<" || op == ">" || op == "<=" || op == ">=") {

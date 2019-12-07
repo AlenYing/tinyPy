@@ -161,6 +161,14 @@ expression:
         $$ = new id_expression(@1.begin.line, $1);
     }
 |
+    ID LBRA NUM RBRA
+    {
+        // list = new std::list<int>();
+        // list->push_back(3);
+        // std::advance(it, std::stoi($3));
+        $$ = new list_item_expression($1, std::stoi($3));
+    }
+|
     string
     {
         $$ = new string_expression($1);

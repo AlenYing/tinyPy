@@ -4,6 +4,7 @@
 
 std::map<std::string, unsigned> value_table;
 std::map<std::string, std::string> string_table;
+std::map<std::string, std::list<int>*> list_table;
 
 unsigned number_expression::get_value() const {
     return value;
@@ -28,6 +29,17 @@ unsigned list_expression::get_value() const {
 
 std::string list_expression::get_string() const {
     return "list";
+}
+
+unsigned list_item_expression::get_value() const {
+    std::list<int>* list = list_table[id_name];
+    std::list<int>::iterator it = list->begin();
+    std::advance(it, _index-1);
+    return *it;
+}
+
+std::string list_item_expression::get_string() const {
+    return "list_item";
 }
 
 unsigned string_expression::get_value() const {
@@ -130,6 +142,8 @@ void assign_instruction::execute() {
         value_table[left] = right->get_value();
     } else if (right->get_type() == py_string) {
         string_table[left] = right->get_string();
+    } else if (right->get_type() == py_list) {
+        list_table[left] = right->list;
     }
 }
 

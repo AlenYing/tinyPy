@@ -8,7 +8,7 @@ a = 1
 b = 2
 s = "Hello"
 c = false
-l = [1, 2]
+l = [1, 2, 3]
 d = true
 a = a + b
 b = b - 1
@@ -20,4 +20,4 @@ print(b)
 print(c)
 print(d)
 print(s)
-print(l)
+print(l[3])

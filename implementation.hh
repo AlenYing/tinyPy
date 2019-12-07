@@ -21,6 +21,7 @@ class expression {
     virtual std::string get_code() const = 0;
     virtual unsigned get_value() const = 0;
     virtual std::string get_string() const = 0;
+    std::list<int>* list;
 };
 
 class number_expression : public expression {
@@ -45,6 +46,18 @@ class list_expression: public expression {
   private:
     unsigned value;
     std::list<int>* listValue;
+};
+
+class list_item_expression: public expression {
+  public:
+    list_item_expression(std::string _name, int _index);
+    type get_type() const;
+    std::string get_code() const;
+    unsigned get_value() const;
+    std::string get_string() const;
+  private:
+    std::string id_name;
+    int _index;
 };
 
 class boolean_expression : public expression {
@@ -90,6 +103,7 @@ struct symbol {
 extern std::map<std::string, symbol> symbol_table;
 extern std::map<std::string, unsigned> value_table;
 extern std::map<std::string, std::string> string_table;
+extern std::map<std::string, std::list<int>*> list_table;
 
 class id_expression : public expression {
   public:

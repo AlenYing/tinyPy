@@ -129,6 +129,10 @@ std::string binop_expression::get_code() const {
     return ss.str();
 }
 
+std::string list_item_expression::get_code() const {
+    return "list_code";
+}
+
 std::string not_expression::get_code() const {
     std::stringstream ss;
     ss << operand->get_code();

@@ -18,6 +18,11 @@ number_expression::number_expression(std::string text) {
     ss >> value;
 }
 
+list_item_expression::list_item_expression(std::string _name, int _i) {
+    id_name = _name;
+    _index = _i;
+}
+
 string_expression::string_expression(std::string _string) {
     std::stringstream ss(_string);
     ss >> value;
@@ -25,7 +30,7 @@ string_expression::string_expression(std::string _string) {
 }
 
 list_expression::list_expression(std::list<int>* _list) {
-    listValue = _list;
+    list = _list;
 }
 
 
