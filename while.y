@@ -125,12 +125,12 @@ command:
         $$ = new assign_instruction(@2.begin.line, $1, $3);
     }
 |
-    IF expression THE commands EIF
+    IF expression THE commands
     {
         $$ = new if_instruction(@1.begin.line, $2, $4, 0);
     }
 |
-    IF expression THE commands ELS commands EIF
+    IF expression THE commands ELS commands
     {
         $$ = new if_instruction(@1.begin.line, $2, $4, $6);
     }

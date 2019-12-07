@@ -27,3 +27,63 @@ The following command interpretes a miniPy program immediately:
 ```
 ./miniPy path/to/your/miniPy.program
 ```
+
+## Basic Syntax
+
+### Declaration
+
+```python
+int a
+bool b
+string c
+list d
+```
+
+### Assignment
+
+```python
+a = 3
+b = 4
+c = "Hello World"
+d = [1, 34, 2]
+```
+
+### Arithmetic Expression
+
+MiniPy supports **Addition**, **Modulo**, **Subtraction**, **Divistion**, **Multiplication** operations for integer variables:
+
+```python
+a = a + b 
+a = a * b
+c = a - b
+a = a / b
+a = a % b
+```
+
+### Boolean Expression
+
+MiniPy supports **Negation**, **And**, **Or** for bool variables:
+
+```python
+bool a
+bool b
+a = true
+b = false
+a = a && b
+a = ~b
+b = a || b
+```
+
+## Looping Expression
+
+```python
+while (b >= 0) do
+    print(b)
+    b = b-1
+done
+```
+
+## Branching Expression
+
+```python
+
