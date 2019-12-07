@@ -11,7 +11,7 @@ yyFlexLexer *lexer;
 int yylex(yy::parser::semantic_type* yylval, yy::parser::location_type* yylloc) {
     yylloc->begin.line = lexer->lineno();
     int token = lexer->yylex();
-    if(token == yy::parser::token::ID || token == yy::parser::token::NUM) {
+    if(token == yy::parser::token::ID || token == yy::parser::token::NUM || token == yy::parser::token::STREXP) {
         yylval->build(std::string(lexer->YYText()));
     }
     return token;

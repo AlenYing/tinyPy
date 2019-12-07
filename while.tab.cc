@@ -182,25 +182,26 @@ namespace yy {
   {
       switch (other.type_get ())
     {
-      case 49: // expression
+      case 50: // expression
         value.copy< expression* > (other.value);
         break;
 
-      case 48: // command
+      case 49: // command
         value.copy< instruction* > (other.value);
         break;
 
-      case 47: // commands
+      case 48: // commands
         value.copy< std::list<instruction*>*  > (other.value);
         break;
 
-      case 51: // items
+      case 52: // items
         value.copy< std::list<int>* > (other.value);
         break;
 
       case 27: // ID
       case 28: // NUM
-      case 50: // string
+      case 29: // STREXP
+      case 51: // string
         value.copy< std::string > (other.value);
         break;
 
@@ -221,25 +222,26 @@ namespace yy {
     (void) v;
       switch (this->type_get ())
     {
-      case 49: // expression
+      case 50: // expression
         value.copy< expression* > (v);
         break;
 
-      case 48: // command
+      case 49: // command
         value.copy< instruction* > (v);
         break;
 
-      case 47: // commands
+      case 48: // commands
         value.copy< std::list<instruction*>*  > (v);
         break;
 
-      case 51: // items
+      case 52: // items
         value.copy< std::list<int>* > (v);
         break;
 
       case 27: // ID
       case 28: // NUM
-      case 50: // string
+      case 29: // STREXP
+      case 51: // string
         value.copy< std::string > (v);
         break;
 
@@ -319,25 +321,26 @@ namespace yy {
     // Type destructor.
     switch (yytype)
     {
-      case 49: // expression
+      case 50: // expression
         value.template destroy< expression* > ();
         break;
 
-      case 48: // command
+      case 49: // command
         value.template destroy< instruction* > ();
         break;
 
-      case 47: // commands
+      case 48: // commands
         value.template destroy< std::list<instruction*>*  > ();
         break;
 
-      case 51: // items
+      case 52: // items
         value.template destroy< std::list<int>* > ();
         break;
 
       case 27: // ID
       case 28: // NUM
-      case 50: // string
+      case 29: // STREXP
+      case 51: // string
         value.template destroy< std::string > ();
         break;
 
@@ -364,25 +367,26 @@ namespace yy {
     super_type::move(s);
       switch (this->type_get ())
     {
-      case 49: // expression
+      case 50: // expression
         value.move< expression* > (s.value);
         break;
 
-      case 48: // command
+      case 49: // command
         value.move< instruction* > (s.value);
         break;
 
-      case 47: // commands
+      case 48: // commands
         value.move< std::list<instruction*>*  > (s.value);
         break;
 
-      case 51: // items
+      case 52: // items
         value.move< std::list<int>* > (s.value);
         break;
 
       case 27: // ID
       case 28: // NUM
-      case 50: // string
+      case 29: // STREXP
+      case 51: // string
         value.move< std::string > (s.value);
         break;
 
@@ -588,6 +592,12 @@ namespace yy {
   }
 
   parser::symbol_type
+  parser::make_STREXP (const std::string& v, const location_type& l)
+  {
+    return symbol_type (token::STREXP, v, l);
+  }
+
+  parser::symbol_type
   parser::make_QUO (const location_type& l)
   {
     return symbol_type (token::QUO, l);
@@ -725,25 +735,26 @@ namespace yy {
   {
       switch (that.type_get ())
     {
-      case 49: // expression
+      case 50: // expression
         value.move< expression* > (that.value);
         break;
 
-      case 48: // command
+      case 49: // command
         value.move< instruction* > (that.value);
         break;
 
-      case 47: // commands
+      case 48: // commands
         value.move< std::list<instruction*>*  > (that.value);
         break;
 
-      case 51: // items
+      case 52: // items
         value.move< std::list<int>* > (that.value);
         break;
 
       case 27: // ID
       case 28: // NUM
-      case 50: // string
+      case 29: // STREXP
+      case 51: // string
         value.move< std::string > (that.value);
         break;
 
@@ -762,25 +773,26 @@ namespace yy {
     state = that.state;
       switch (that.type_get ())
     {
-      case 49: // expression
+      case 50: // expression
         value.copy< expression* > (that.value);
         break;
 
-      case 48: // command
+      case 49: // command
         value.copy< instruction* > (that.value);
         break;
 
-      case 47: // commands
+      case 48: // commands
         value.copy< std::list<instruction*>*  > (that.value);
         break;
 
-      case 51: // items
+      case 52: // items
         value.copy< std::list<int>* > (that.value);
         break;
 
       case 27: // ID
       case 28: // NUM
-      case 50: // string
+      case 29: // STREXP
+      case 51: // string
         value.copy< std::string > (that.value);
         break;
 
@@ -1011,25 +1023,26 @@ namespace yy {
          when using variants.  */
         switch (yyr1_[yyn])
     {
-      case 49: // expression
+      case 50: // expression
         yylhs.value.build< expression* > ();
         break;
 
-      case 48: // command
+      case 49: // command
         yylhs.value.build< instruction* > ();
         break;
 
-      case 47: // commands
+      case 48: // commands
         yylhs.value.build< std::list<instruction*>*  > ();
         break;
 
-      case 51: // items
+      case 52: // items
         yylhs.value.build< std::list<int>* > ();
         break;
 
       case 27: // ID
       case 28: // NUM
-      case 50: // string
+      case 29: // STREXP
+      case 51: // string
         yylhs.value.build< std::string > ();
         break;
 
@@ -1051,312 +1064,312 @@ namespace yy {
           switch (yyn)
             {
   case 2:
-#line 62 "while.y" // lalr1.cc:859
+#line 63 "while.y" // lalr1.cc:859
     {
         cout << "miniPy>\n";
         type_check_commands(yystack_[0].value.as< std::list<instruction*>*  > ());
         execute_commands(yystack_[0].value.as< std::list<instruction*>*  > ());
         delete_commands(yystack_[0].value.as< std::list<instruction*>*  > ());
     }
-#line 1062 "while.tab.cc" // lalr1.cc:859
+#line 1075 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 5:
-#line 78 "while.y" // lalr1.cc:859
+#line 79 "while.y" // lalr1.cc:859
     {
         symbol(yystack_[1].location.begin.line, yystack_[0].value.as< std::string > (), boolean).declare();
     }
-#line 1070 "while.tab.cc" // lalr1.cc:859
+#line 1083 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 6:
-#line 83 "while.y" // lalr1.cc:859
+#line 84 "while.y" // lalr1.cc:859
     {
         symbol(yystack_[1].location.begin.line, yystack_[0].value.as< std::string > (), natural).declare();
     }
-#line 1078 "while.tab.cc" // lalr1.cc:859
+#line 1091 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 7:
-#line 88 "while.y" // lalr1.cc:859
+#line 89 "while.y" // lalr1.cc:859
     {
         symbol(yystack_[1].location.begin.line, yystack_[0].value.as< std::string > (), py_string).declare();
     }
-#line 1086 "while.tab.cc" // lalr1.cc:859
+#line 1099 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 8:
-#line 93 "while.y" // lalr1.cc:859
+#line 94 "while.y" // lalr1.cc:859
     {
         symbol(yystack_[1].location.begin.line, yystack_[0].value.as< std::string > (), py_list).declare();
     }
-#line 1094 "while.tab.cc" // lalr1.cc:859
+#line 1107 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 9:
-#line 100 "while.y" // lalr1.cc:859
+#line 101 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< std::list<instruction*>*  > () = new std::list<instruction*>();
     }
-#line 1102 "while.tab.cc" // lalr1.cc:859
+#line 1115 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 10:
-#line 105 "while.y" // lalr1.cc:859
+#line 106 "while.y" // lalr1.cc:859
     {
         yystack_[1].value.as< std::list<instruction*>*  > ()->push_back(yystack_[0].value.as< instruction* > ());
         yylhs.value.as< std::list<instruction*>*  > () = yystack_[1].value.as< std::list<instruction*>*  > ();
     }
-#line 1111 "while.tab.cc" // lalr1.cc:859
+#line 1124 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 11:
-#line 113 "while.y" // lalr1.cc:859
+#line 114 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< instruction* > () = new read_instruction(yystack_[3].location.begin.line, yystack_[1].value.as< std::string > ());
     }
-#line 1119 "while.tab.cc" // lalr1.cc:859
+#line 1132 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 12:
-#line 118 "while.y" // lalr1.cc:859
+#line 119 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< instruction* > () = new write_instruction(yystack_[3].location.begin.line, yystack_[1].value.as< expression* > ());
     }
-#line 1127 "while.tab.cc" // lalr1.cc:859
+#line 1140 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 13:
-#line 123 "while.y" // lalr1.cc:859
+#line 124 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< instruction* > () = new assign_instruction(yystack_[1].location.begin.line, yystack_[2].value.as< std::string > (), yystack_[0].value.as< expression* > ());
     }
-#line 1135 "while.tab.cc" // lalr1.cc:859
+#line 1148 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 14:
-#line 128 "while.y" // lalr1.cc:859
+#line 129 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< instruction* > () = new if_instruction(yystack_[4].location.begin.line, yystack_[3].value.as< expression* > (), yystack_[1].value.as< std::list<instruction*>*  > (), 0);
     }
-#line 1143 "while.tab.cc" // lalr1.cc:859
+#line 1156 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 15:
-#line 133 "while.y" // lalr1.cc:859
+#line 134 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< instruction* > () = new if_instruction(yystack_[6].location.begin.line, yystack_[5].value.as< expression* > (), yystack_[3].value.as< std::list<instruction*>*  > (), yystack_[1].value.as< std::list<instruction*>*  > ());
     }
-#line 1151 "while.tab.cc" // lalr1.cc:859
+#line 1164 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 16:
-#line 138 "while.y" // lalr1.cc:859
+#line 139 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< instruction* > () = new while_instruction(yystack_[4].location.begin.line, yystack_[3].value.as< expression* > (), yystack_[1].value.as< std::list<instruction*>*  > ());
     }
-#line 1159 "while.tab.cc" // lalr1.cc:859
+#line 1172 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 17:
-#line 145 "while.y" // lalr1.cc:859
+#line 146 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< expression* > () = new number_expression(yystack_[0].value.as< std::string > ());
     }
-#line 1167 "while.tab.cc" // lalr1.cc:859
+#line 1180 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 18:
-#line 150 "while.y" // lalr1.cc:859
+#line 151 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< expression* > () = new boolean_expression(true);
     }
-#line 1175 "while.tab.cc" // lalr1.cc:859
+#line 1188 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 19:
-#line 155 "while.y" // lalr1.cc:859
+#line 156 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< expression* > () = new boolean_expression(false);
     }
-#line 1183 "while.tab.cc" // lalr1.cc:859
+#line 1196 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 20:
-#line 160 "while.y" // lalr1.cc:859
+#line 161 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< expression* > () = new id_expression(yystack_[0].location.begin.line, yystack_[0].value.as< std::string > ());
     }
-#line 1191 "while.tab.cc" // lalr1.cc:859
+#line 1204 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 21:
-#line 165 "while.y" // lalr1.cc:859
+#line 166 "while.y" // lalr1.cc:859
     {
         // list = new std::list<int>();
         // list->push_back(3);
         // std::advance(it, std::stoi($3));
         yylhs.value.as< expression* > () = new list_item_expression(yystack_[3].value.as< std::string > (), std::stoi(yystack_[1].value.as< std::string > ()));
     }
-#line 1202 "while.tab.cc" // lalr1.cc:859
+#line 1215 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 22:
-#line 173 "while.y" // lalr1.cc:859
+#line 174 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< expression* > () = new string_expression(yystack_[0].value.as< std::string > ());
     }
-#line 1210 "while.tab.cc" // lalr1.cc:859
+#line 1223 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 23:
-#line 178 "while.y" // lalr1.cc:859
+#line 179 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< expression* > () = new list_expression(yystack_[1].value.as< std::list<int>* > ());
     }
-#line 1218 "while.tab.cc" // lalr1.cc:859
+#line 1231 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 24:
-#line 183 "while.y" // lalr1.cc:859
+#line 184 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< expression* > () = new binop_expression(yystack_[1].location.begin.line, "+", yystack_[2].value.as< expression* > (), yystack_[0].value.as< expression* > ());
     }
-#line 1226 "while.tab.cc" // lalr1.cc:859
+#line 1239 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 25:
-#line 188 "while.y" // lalr1.cc:859
+#line 189 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< expression* > () = new binop_expression(yystack_[1].location.begin.line, "-", yystack_[2].value.as< expression* > (), yystack_[0].value.as< expression* > ());
     }
-#line 1234 "while.tab.cc" // lalr1.cc:859
+#line 1247 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 26:
-#line 193 "while.y" // lalr1.cc:859
+#line 194 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< expression* > () = new binop_expression(yystack_[1].location.begin.line, "*", yystack_[2].value.as< expression* > (), yystack_[0].value.as< expression* > ());
     }
-#line 1242 "while.tab.cc" // lalr1.cc:859
+#line 1255 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 27:
-#line 198 "while.y" // lalr1.cc:859
+#line 199 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< expression* > () = new binop_expression(yystack_[1].location.begin.line, "/", yystack_[2].value.as< expression* > (), yystack_[0].value.as< expression* > ());
     }
-#line 1250 "while.tab.cc" // lalr1.cc:859
+#line 1263 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 28:
-#line 203 "while.y" // lalr1.cc:859
+#line 204 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< expression* > () = new binop_expression(yystack_[1].location.begin.line, "%", yystack_[2].value.as< expression* > (), yystack_[0].value.as< expression* > ());
     }
-#line 1258 "while.tab.cc" // lalr1.cc:859
+#line 1271 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 29:
-#line 208 "while.y" // lalr1.cc:859
+#line 209 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< expression* > () = new binop_expression(yystack_[1].location.begin.line, "<", yystack_[2].value.as< expression* > (), yystack_[0].value.as< expression* > ());
     }
-#line 1266 "while.tab.cc" // lalr1.cc:859
+#line 1279 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 30:
-#line 213 "while.y" // lalr1.cc:859
+#line 214 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< expression* > () = new binop_expression(yystack_[1].location.begin.line, ">", yystack_[2].value.as< expression* > (), yystack_[0].value.as< expression* > ());
     }
-#line 1274 "while.tab.cc" // lalr1.cc:859
+#line 1287 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 31:
-#line 218 "while.y" // lalr1.cc:859
+#line 219 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< expression* > () = new binop_expression(yystack_[1].location.begin.line, "<=", yystack_[2].value.as< expression* > (), yystack_[0].value.as< expression* > ());
     }
-#line 1282 "while.tab.cc" // lalr1.cc:859
+#line 1295 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 32:
-#line 223 "while.y" // lalr1.cc:859
+#line 224 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< expression* > () = new binop_expression(yystack_[1].location.begin.line, ">=", yystack_[2].value.as< expression* > (), yystack_[0].value.as< expression* > ());
     }
-#line 1290 "while.tab.cc" // lalr1.cc:859
+#line 1303 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 33:
-#line 228 "while.y" // lalr1.cc:859
+#line 229 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< expression* > () = new binop_expression(yystack_[1].location.begin.line, "and", yystack_[2].value.as< expression* > (), yystack_[0].value.as< expression* > ());
     }
-#line 1298 "while.tab.cc" // lalr1.cc:859
+#line 1311 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 34:
-#line 233 "while.y" // lalr1.cc:859
+#line 234 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< expression* > () = new binop_expression(yystack_[1].location.begin.line, "or", yystack_[2].value.as< expression* > (), yystack_[0].value.as< expression* > ());
     }
-#line 1306 "while.tab.cc" // lalr1.cc:859
+#line 1319 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 35:
-#line 238 "while.y" // lalr1.cc:859
+#line 239 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< expression* > () = new binop_expression(yystack_[1].location.begin.line, "=", yystack_[2].value.as< expression* > (), yystack_[0].value.as< expression* > ());
     }
-#line 1314 "while.tab.cc" // lalr1.cc:859
+#line 1327 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 36:
-#line 243 "while.y" // lalr1.cc:859
+#line 244 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< expression* > () = new not_expression(yystack_[1].location.begin.line, "not", yystack_[0].value.as< expression* > ());
     }
-#line 1322 "while.tab.cc" // lalr1.cc:859
+#line 1335 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 37:
-#line 248 "while.y" // lalr1.cc:859
+#line 249 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< expression* > () = yystack_[1].value.as< expression* > ();
     }
-#line 1330 "while.tab.cc" // lalr1.cc:859
+#line 1343 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 38:
-#line 254 "while.y" // lalr1.cc:859
+#line 255 "while.y" // lalr1.cc:859
     {
-        yylhs.value.as< std::string > () = yystack_[1].value.as< std::string > ();
+        yylhs.value.as< std::string > () = yystack_[0].value.as< std::string > ();
     }
-#line 1338 "while.tab.cc" // lalr1.cc:859
+#line 1351 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 39:
-#line 261 "while.y" // lalr1.cc:859
+#line 262 "while.y" // lalr1.cc:859
     {
         yylhs.value.as< std::list<int>* > () = new std::list<int>();
         yylhs.value.as< std::list<int>* > ()->push_back(std::stoi(yystack_[0].value.as< std::string > ()));
     }
-#line 1347 "while.tab.cc" // lalr1.cc:859
+#line 1360 "while.tab.cc" // lalr1.cc:859
     break;
 
   case 40:
-#line 267 "while.y" // lalr1.cc:859
+#line 268 "while.y" // lalr1.cc:859
     {
         yystack_[2].value.as< std::list<int>* > ()->push_back(std::stoi(yystack_[0].value.as< std::string > ()));
         yylhs.value.as< std::list<int>* > () = yystack_[2].value.as< std::list<int>* > ();
     }
-#line 1356 "while.tab.cc" // lalr1.cc:859
+#line 1369 "while.tab.cc" // lalr1.cc:859
     break;
 
 
-#line 1360 "while.tab.cc" // lalr1.cc:859
+#line 1373 "while.tab.cc" // lalr1.cc:859
             default:
               break;
             }
@@ -1522,22 +1535,22 @@ namespace yy {
   }
 
 
-  const signed char parser::yypact_ninf_ = -43;
+  const signed char parser::yypact_ninf_ = -42;
 
   const signed char parser::yytable_ninf_ = -1;
 
   const short int
   parser::yypact_[] =
   {
-     -43,     3,   153,   -43,   -22,   -20,   -19,   -15,   -43,   147,
-     -43,   -43,   -43,   -43,     0,     1,   -18,   -18,     4,   -43,
-       2,   -18,   -43,   -43,   -18,    -1,     7,   -43,     5,   -18,
-      22,   -43,    48,   -18,    10,    67,    86,   -43,    -6,     8,
-       6,   -43,   -43,   -18,   -18,   -18,   -18,   -18,   -18,   -18,
-     -18,   -18,   -18,   -18,   -18,   -43,    35,   -43,   -43,   -43,
-     -43,     9,    14,   -43,   119,   144,   154,   163,    54,    54,
-      54,    54,   -24,   -24,   -43,   -43,   -43,   126,   -43,   -43,
-     -43,   -43,   -43,   140,   -43
+     -42,     3,    16,   -42,   -22,   -20,   -19,   -15,   -42,   149,
+     -42,   -42,   -42,   -42,     5,     6,   -18,   -18,     8,   -42,
+       4,   -18,   -42,   -42,   -18,     7,    10,   -42,   -42,   -18,
+      20,   -42,    47,   -18,    13,    67,    87,   -42,    -6,    48,
+     -42,   -42,   -18,   -18,   -18,   -18,   -18,   -18,   -18,   -18,
+     -18,   -18,   -18,   -18,   -42,    33,   -42,   -42,   -42,   -42,
+      49,    71,   121,   145,   155,   164,    53,    53,    53,    53,
+     -25,   -25,   -42,   -42,   -42,   128,   -42,   -42,   -42,   -42,
+     -42,   142,   -42
   };
 
   const unsigned char
@@ -1545,19 +1558,19 @@ namespace yy {
   {
        3,     0,     9,     1,     0,     0,     0,     0,     4,     2,
        5,     6,     7,     8,     0,     0,     0,     0,     0,    10,
-       0,     0,    18,    19,     0,     0,    20,    17,     0,     0,
+       0,     0,    18,    19,     0,     0,    20,    17,    38,     0,
        0,    22,     0,     0,     0,     0,     0,    39,     0,     0,
-       0,    36,     9,     0,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,     0,     9,    13,    11,    12,    37,
-      23,     0,     0,    38,     0,    34,    33,    35,    29,    30,
-      31,    32,    24,    25,    26,    27,    28,     0,    40,    21,
-       9,    14,    16,     0,    15
+      36,     9,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     9,    13,    11,    12,    37,    23,
+       0,     0,     0,    34,    33,    35,    29,    30,    31,    32,
+      24,    25,    26,    27,    28,     0,    40,    21,     9,    14,
+      16,     0,    15
   };
 
   const signed char
   parser::yypgoto_[] =
   {
-     -43,   -43,   -43,   -43,   -42,   -43,    -3,   -43,   -43
+     -42,   -42,   -42,   -42,   -41,   -42,    -3,   -42,   -42
   };
 
   const signed char
@@ -1569,77 +1582,77 @@ namespace yy {
   const unsigned char
   parser::yytable_[] =
   {
-      64,    22,    23,     3,    24,    10,    25,    11,    12,    26,
-      27,    28,    13,    77,    32,    52,    53,    54,    35,    60,
-      61,    36,    20,    21,    29,    33,    41,    37,     0,    34,
-      56,    39,    40,    57,    42,    63,    62,    78,    83,    79,
-      65,    66,    67,    68,    69,    70,    71,    72,    73,    74,
-      75,    76,    43,    44,    45,    46,    47,    48,    49,    50,
-      51,    52,    53,    54,    55,    43,    44,    45,    46,    47,
-      48,    49,    50,    51,    52,    53,    54,     0,    43,    44,
-      45,    46,    47,    48,    49,    50,    51,    52,    53,    54,
-      58,    50,    51,    52,    53,    54,     0,    43,    44,    45,
-      46,    47,    48,    49,    50,    51,    52,    53,    54,    59,
-       0,     0,     0,     0,     0,     0,    43,    44,    45,    46,
-      47,    48,    49,    50,    51,    52,    53,    54,    14,    15,
-      16,     0,    80,    81,    17,    14,    15,    16,     0,     0,
-       0,    17,     0,     0,    82,     0,    18,     0,     0,    14,
-      15,    16,     0,    18,    84,    17,    14,    15,    16,     4,
-       5,     6,    17,     0,     0,     0,     0,    18,     0,     0,
-       7,     0,     0,     0,    18,    44,    45,    46,    47,    48,
-      49,    50,    51,    52,    53,    54,    45,    46,    47,    48,
-      49,    50,    51,    52,    53,    54,    46,    47,    48,    49,
-      50,    51,    52,    53,    54
+      62,    22,    23,     3,    24,    10,    25,    11,    12,    26,
+      27,    28,    13,    75,    32,    51,    52,    53,    35,    59,
+      60,    36,     4,     5,     6,    29,    40,    20,    21,    33,
+      55,    34,    41,     7,    39,    37,    56,    81,     0,    63,
+      64,    65,    66,    67,    68,    69,    70,    71,    72,    73,
+      74,    42,    43,    44,    45,    46,    47,    48,    49,    50,
+      51,    52,    53,    54,    42,    43,    44,    45,    46,    47,
+      48,    49,    50,    51,    52,    53,    61,    76,    42,    43,
+      44,    45,    46,    47,    48,    49,    50,    51,    52,    53,
+      57,    49,    50,    51,    52,    53,    77,     0,    42,    43,
+      44,    45,    46,    47,    48,    49,    50,    51,    52,    53,
+      58,     0,     0,     0,     0,     0,     0,     0,    42,    43,
+      44,    45,    46,    47,    48,    49,    50,    51,    52,    53,
+      14,    15,    16,     0,    78,    79,    17,    14,    15,    16,
+       0,     0,     0,    17,     0,     0,    80,     0,    18,     0,
+       0,    14,    15,    16,     0,    18,    82,    17,    14,    15,
+      16,     0,     0,     0,    17,     0,     0,     0,     0,    18,
+       0,     0,     0,     0,     0,     0,    18,    43,    44,    45,
+      46,    47,    48,    49,    50,    51,    52,    53,    44,    45,
+      46,    47,    48,    49,    50,    51,    52,    53,    45,    46,
+      47,    48,    49,    50,    51,    52,    53
   };
 
   const signed char
   parser::yycheck_[] =
   {
-      42,    19,    20,     0,    22,    27,    24,    27,    27,    27,
-      28,    29,    27,    55,    17,    39,    40,    41,    21,    25,
-      26,    24,    22,    22,    42,    21,    29,    28,    -1,    27,
-      33,    24,    27,    23,    12,    29,    28,    28,    80,    25,
+      41,    19,    20,     0,    22,    27,    24,    27,    27,    27,
+      28,    29,    27,    54,    17,    40,    41,    42,    21,    25,
+      26,    24,     6,     7,     8,    43,    29,    22,    22,    21,
+      33,    27,    12,    17,    24,    28,    23,    78,    -1,    42,
       43,    44,    45,    46,    47,    48,    49,    50,    51,    52,
-      53,    54,    30,    31,    32,    33,    34,    35,    36,    37,
-      38,    39,    40,    41,    16,    30,    31,    32,    33,    34,
-      35,    36,    37,    38,    39,    40,    41,    -1,    30,    31,
-      32,    33,    34,    35,    36,    37,    38,    39,    40,    41,
-      23,    37,    38,    39,    40,    41,    -1,    30,    31,    32,
-      33,    34,    35,    36,    37,    38,    39,    40,    41,    23,
-      -1,    -1,    -1,    -1,    -1,    -1,    30,    31,    32,    33,
-      34,    35,    36,    37,    38,    39,    40,    41,     9,    10,
-      11,    -1,    13,    14,    15,     9,    10,    11,    -1,    -1,
-      -1,    15,    -1,    -1,    18,    -1,    27,    -1,    -1,     9,
-      10,    11,    -1,    27,    14,    15,     9,    10,    11,     6,
-       7,     8,    15,    -1,    -1,    -1,    -1,    27,    -1,    -1,
-      17,    -1,    -1,    -1,    27,    31,    32,    33,    34,    35,
-      36,    37,    38,    39,    40,    41,    32,    33,    34,    35,
-      36,    37,    38,    39,    40,    41,    33,    34,    35,    36,
-      37,    38,    39,    40,    41
+      53,    31,    32,    33,    34,    35,    36,    37,    38,    39,
+      40,    41,    42,    16,    31,    32,    33,    34,    35,    36,
+      37,    38,    39,    40,    41,    42,    28,    28,    31,    32,
+      33,    34,    35,    36,    37,    38,    39,    40,    41,    42,
+      23,    38,    39,    40,    41,    42,    25,    -1,    31,    32,
+      33,    34,    35,    36,    37,    38,    39,    40,    41,    42,
+      23,    -1,    -1,    -1,    -1,    -1,    -1,    -1,    31,    32,
+      33,    34,    35,    36,    37,    38,    39,    40,    41,    42,
+       9,    10,    11,    -1,    13,    14,    15,     9,    10,    11,
+      -1,    -1,    -1,    15,    -1,    -1,    18,    -1,    27,    -1,
+      -1,     9,    10,    11,    -1,    27,    14,    15,     9,    10,
+      11,    -1,    -1,    -1,    15,    -1,    -1,    -1,    -1,    27,
+      -1,    -1,    -1,    -1,    -1,    -1,    27,    32,    33,    34,
+      35,    36,    37,    38,    39,    40,    41,    42,    33,    34,
+      35,    36,    37,    38,    39,    40,    41,    42,    34,    35,
+      36,    37,    38,    39,    40,    41,    42
   };
 
   const unsigned char
   parser::yystos_[] =
   {
-       0,    44,    45,     0,     6,     7,     8,    17,    46,    47,
-      27,    27,    27,    27,     9,    10,    11,    15,    27,    48,
-      22,    22,    19,    20,    22,    24,    27,    28,    29,    42,
-      49,    50,    49,    21,    27,    49,    49,    28,    51,    24,
-      27,    49,    12,    30,    31,    32,    33,    34,    35,    36,
-      37,    38,    39,    40,    41,    16,    49,    23,    23,    23,
-      25,    26,    28,    29,    47,    49,    49,    49,    49,    49,
-      49,    49,    49,    49,    49,    49,    49,    47,    28,    25,
-      13,    14,    18,    47,    14
+       0,    45,    46,     0,     6,     7,     8,    17,    47,    48,
+      27,    27,    27,    27,     9,    10,    11,    15,    27,    49,
+      22,    22,    19,    20,    22,    24,    27,    28,    29,    43,
+      50,    51,    50,    21,    27,    50,    50,    28,    52,    24,
+      50,    12,    31,    32,    33,    34,    35,    36,    37,    38,
+      39,    40,    41,    42,    16,    50,    23,    23,    23,    25,
+      26,    28,    48,    50,    50,    50,    50,    50,    50,    50,
+      50,    50,    50,    50,    50,    48,    28,    25,    13,    14,
+      18,    48,    14
   };
 
   const unsigned char
   parser::yyr1_[] =
   {
-       0,    43,    44,    45,    45,    46,    46,    46,    46,    47,
-      47,    48,    48,    48,    48,    48,    48,    49,    49,    49,
-      49,    49,    49,    49,    49,    49,    49,    49,    49,    49,
-      49,    49,    49,    49,    49,    49,    49,    49,    50,    51,
-      51
+       0,    44,    45,    46,    46,    47,    47,    47,    47,    48,
+      48,    49,    49,    49,    49,    49,    49,    50,    50,    50,
+      50,    50,    50,    50,    50,    50,    50,    50,    50,    50,
+      50,    50,    50,    50,    50,    50,    50,    50,    51,    52,
+      52
   };
 
   const unsigned char
@@ -1648,7 +1661,7 @@ namespace yy {
        0,     2,     2,     0,     2,     2,     2,     2,     2,     0,
        2,     4,     4,     3,     5,     7,     5,     1,     1,     1,
        1,     4,     1,     3,     3,     3,     3,     3,     3,     3,
-       3,     3,     3,     3,     3,     3,     2,     3,     3,     1,
+       3,     3,     3,     3,     3,     3,     2,     3,     1,     1,
        3
   };
 
@@ -1662,20 +1675,20 @@ namespace yy {
   "$end", "error", "$undefined", "PRG", "BEG", "END", "BOO", "INT", "STR",
   "REA", "WRI", "IF", "THE", "ELS", "EIF", "WHI", "DO", "ARR", "DON",
   "TRU", "FAL", "ASN", "OP", "CL", "LBRA", "RBRA", "COMMA", "ID", "NUM",
-  "QUO", "OR", "AND", "EQ", "LS", "GR", "LSE", "GRE", "ADD", "SUB", "MUL",
-  "DIV", "MOD", "NOT", "$accept", "start", "declarations", "declaration",
-  "commands", "command", "expression", "string", "items", YY_NULLPTR
+  "STREXP", "QUO", "OR", "AND", "EQ", "LS", "GR", "LSE", "GRE", "ADD",
+  "SUB", "MUL", "DIV", "MOD", "NOT", "$accept", "start", "declarations",
+  "declaration", "commands", "command", "expression", "string", "items", YY_NULLPTR
   };
 
 
   const unsigned short int
   parser::yyrline_[] =
   {
-       0,    61,    61,    70,    73,    77,    82,    87,    92,   100,
-     104,   112,   117,   122,   127,   132,   137,   144,   149,   154,
-     159,   164,   172,   177,   182,   187,   192,   197,   202,   207,
-     212,   217,   222,   227,   232,   237,   242,   247,   253,   260,
-     266
+       0,    62,    62,    71,    74,    78,    83,    88,    93,   101,
+     105,   113,   118,   123,   128,   133,   138,   145,   150,   155,
+     160,   165,   173,   178,   183,   188,   193,   198,   203,   208,
+     213,   218,   223,   228,   233,   238,   243,   248,   254,   261,
+     267
   };
 
   // Print the state stack on the debug stream.
@@ -1745,9 +1758,9 @@ namespace yy {
        5,     6,     7,     8,     9,    10,    11,    12,    13,    14,
       15,    16,    17,    18,    19,    20,    21,    22,    23,    24,
       25,    26,    27,    28,    29,    30,    31,    32,    33,    34,
-      35,    36,    37,    38,    39,    40,    41,    42
+      35,    36,    37,    38,    39,    40,    41,    42,    43
     };
-    const unsigned int user_token_number_max_ = 297;
+    const unsigned int user_token_number_max_ = 298;
     const token_number_type undef_token_ = 2;
 
     if (static_cast<int>(t) <= yyeof_)
@@ -1760,6 +1773,6 @@ namespace yy {
 
 
 } // yy
-#line 1764 "while.tab.cc" // lalr1.cc:1167
-#line 273 "while.y" // lalr1.cc:1168
+#line 1777 "while.tab.cc" // lalr1.cc:1167
+#line 274 "while.y" // lalr1.cc:1168
 

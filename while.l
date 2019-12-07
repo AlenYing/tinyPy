@@ -52,6 +52,7 @@ false                       return parser::token::FAL;
 ","                         return parser::token::COMMA;
 [a-zA-Z_][a-zA-Z0-9_]*      return parser::token::ID;
 [0-9]+                      return parser::token::NUM;
+"\""(.*?)"\""                     return parser::token::STREXP;
 [ \t\n]+                    // Whitespaces skipped.
 #.*                         // Commens skipped.
 .                           { std::cerr << "Line " << lineno() << ": Unexpected character: '" << YYText() << "'." << std::endl; exit(1); }

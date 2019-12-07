@@ -39,6 +39,7 @@ int yylex(yy::parser::semantic_type* yylval, yy::parser::location_type* yylloc);
 %token COMMA
 %token <std::string> ID
 %token <std::string> NUM
+%token <std::string> STREXP
 %token QUO
 
 %left OR
@@ -250,9 +251,9 @@ expression:
     }
 ;
 string:
-    QUO  ID   QUO
+    STREXP
     {
-        $$ = $2;
+        $$ = $1;
     }
 ;
 
