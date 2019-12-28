@@ -40,7 +40,7 @@ false                       return parser::token::FAL;
 ">"                         return parser::token::GR;
 "<="                        return parser::token::LSE;
 ">="                        return parser::token::GRE;
-"=="                         return parser::token::EQ;
+"=="                        return parser::token::EQ;
 "&&"                        return parser::token::AND;
 "||"                        return parser::token::OR;
 "~"                         return parser::token::NOT;
