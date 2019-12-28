@@ -5,7 +5,7 @@
 #include <cstdlib>
 #include <list>
 #include "implementation.hh"
-#include "while.tab.hh"
+#include "miniPy.tab.hh"
 
 using namespace yy;
 %}
@@ -30,7 +30,7 @@ do                          return parser::token::DO;
 done                        return parser::token::DON;
 true                        return parser::token::TRU;
 false                       return parser::token::FAL;
-"="                        return parser::token::ASN;
+"="                         return parser::token::ASN;
 "+"                         return parser::token::ADD;
 "-"                         return parser::token::SUB;
 "*"                         return parser::token::MUL;

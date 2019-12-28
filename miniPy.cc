@@ -4,7 +4,8 @@
 #include <list>
 #include "FlexLexer.h"
 #include "implementation.hh"
-#include "while.tab.hh"
+#include "miniPy.tab.hh"
+
 
 yyFlexLexer *lexer;
 
